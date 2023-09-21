@@ -1,0 +1,48 @@
+*{
+    /*selector universal: a todas las etiquetas dale este estilo*/
+    margin: 0; padding: 0;
+}
+
+nav {
+    padding: 10px;
+   
+    display:  inline-block;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+nav  a{  /* a la etiqueta nav que tiene como descendoiente una eituqta a*/
+    padding: 10px;
+    background-color:white;
+    text-decoration:none;
+    border: 1px solid rgb(2, 109, 8);
+    margin: 5px;
+    border-radius: 5px;    
+    display:  inline-block;
+}
+nav a:link {color: rgb(2, 109, 8);}/* color rojo a todos los link*/
+nav a:hover {
+    
+    animation: bounce;
+    animation-duration: 2s;
+
+}
+nav a:visited {color: rgb(0, 0, 0);}
+nav a:active {background-color: green; color: white;}
+
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+h3 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
