@@ -1,0 +1,29 @@
+.navbar {
+    background-color: #3d9b49;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo-img {
+    height: 16px;
+    margin-right: 5px;
+}
+
+nav  a{  /* a la etiqueta nav que tiene como descendoiente una eituqta a*/
+    padding: 10px;
+    color: black;
+    background-color:white;
+    text-decoration:none;
+    border: 1px solid rgb(2, 109, 8);
+    margin: 5px;
+    border-radius: 5px;    
+    display:  inline-block;
+}
+
+/* nav a:hover {
+    animation: bounce;
+    animation-duration: 2s;
+}
