@@ -1,3 +1,23 @@
 .hero {
     padding: 20px;
 }
+
+.hero-title {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.hero-subtitle {
+    margin: 10px 10px 25px 10px;
+    font-size: 25px;
+}
+
+.hero-text {
+    margin: 10px;
+}
+
+.hero-images {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
