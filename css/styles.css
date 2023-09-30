@@ -1,6 +1,8 @@
 @import "navbar.css";
 @import "hero.css";
 @import "about.css";
+@import "adoption.css";
+@import "donation.css";
 @import "footer.css";
 
 *{
