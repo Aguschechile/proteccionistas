@@ -20,11 +20,13 @@
     margin: 20px;
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 .hero-links {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .hero-links-button {
@@ -36,4 +38,10 @@
     border: 2px rgb(163, 112, 18) solid;
     border-radius: 10px;
 
+}
+
+@media only screen and (max-width: 768px) {
+    .img-1, .img-3 {
+        display: none;
+    }
 }
