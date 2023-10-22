@@ -1,0 +1,29 @@
+@import "navbar.css";
+@import "hero.css";
+@import "about.css";
+@import "footer.css";
+
+*{
+    /*selector universal: a todas las etiquetas dale este estilo*/
+    margin: 0; 
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    min-height: 75vh; 
+}
+
