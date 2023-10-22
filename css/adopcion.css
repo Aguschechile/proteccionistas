@@ -63,9 +63,14 @@ ul li{
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
+    text-shadow: 0 0 1px;
  
 }
 
+
+.card div{
+border-radius: 10px;
+}
 
 .card:hover{
 transform: perspective(500px) rotateY(180deg);
