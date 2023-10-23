@@ -10,11 +10,11 @@ function validate() {
         error = true;
         name.focus();
     }
-    if (password.value.lenght = 0) {
+    if (password.value == "") {
         document.getElementById("validate_password").innerHTML = "Debe completar el campo";
         error = true;
         password.focus();
-    } else if (password.value.lenght < 6) {
+    } else if (password.value.length < 6) {
         document.getElementById("validate_password").innerHTML = "La contraseña debe ser de al menos 6 caracteres";
         error = true;
         password.focus();
