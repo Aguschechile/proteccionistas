@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE= edge">
   <meta name="viewport" content="width= device-width, initial-scale= 1.0">
-  <title>Mascotas | Registrarse</title>
+  <title>Huellitas | Registrarse</title>
   <link rel="shortcut icon" href="./images/huella.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/styles.css">
 
@@ -26,29 +26,37 @@
   </header>
 
   <main>
-    <h2>¡Registrate para recibir novedades!</h2>
-    <img src="" alt="">
-
-    <form action="">
-      <label for="nombre">Nombre:</label>
-      <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre aqui...">
-      <br>
-      <label for="apellido">Apellido</label>
-      <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido aqui...">
-      <br>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email">
-      <br>
-      <label for="contraseña">Contraseña</label>
-      <input type="password" name="contraseña" id="contraseña">
-      <br>
-      <input type="submit" value="Enviar">
-      <br>
-
-
-    </form>
-
+    <section class="register">
+      <h3>¡Registrate para recibir novedades!</h3>
+      <div class="register-container">
+        <form name="register" onsubmit="return validate();">
+          <label class="register-form-label" for="nombre">Nombre</label>
+          <br>
+          <input class="register-form-input" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre aqui...">
+          <br>
+          <div id="validate_name"> &nbsp; </div>
+          <label class="register-form-label" for="apellido">Apellido</label>
+          <br>
+          <input class="register-form-input" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido aqui...">
+          <br>
+          <div id="validate_surname"> &nbsp; </div>
+          <label class="register-form-label" for="email">Email</label>
+          <br>
+          <input class="register-form-input" type="email" name="email" id="email">
+          <br>
+          <div id="validate_email"> &nbsp; </div>
+          <label class="register-form-label" for="contraseña">Contraseña</label>
+          <br>
+          <input class="register-form-input" type="password" name="contraseña" id="contraseña">
+          <br>
+          <div id="validate_password"> &nbsp; </div>
+          <input class="register-form-btn" type="submit" value="Enviar">
+          <br>
+        </form>
+      </div>
+    </section>
   </main>
+
   <footer class="footer">
     <div class="footer-nav">
       <nav>
@@ -58,6 +66,7 @@
     </div>
     <p class="footer-rights">Sitio desarrollado por el grupo</p>
   </footer>
-</body>
 
+  <script src="/js/register.js"></script>
+</body>
 </html>

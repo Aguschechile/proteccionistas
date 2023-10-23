@@ -3,6 +3,8 @@
 @import "about.css";
 @import "adoption.css";
 @import "donation.css";
+@import "register.css";
+@import "login.css";
 @import "footer.css";
 
 *{
