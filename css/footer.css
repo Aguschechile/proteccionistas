@@ -1,0 +1,17 @@
+.footer {
+    background-color: #3d9b49;
+    min-height: 18vh;
+}
+
+.footer-nav {
+    padding: 20px 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-rights {
+    color: beige;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
