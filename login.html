@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE= edge">
   <meta name="viewport" content="width= device-width, initial-scale= 1.0">
-  <title>Huellitas</title>
+  <title>Huellitas | Log in</title>
   <link rel="shortcut icon" href="./images/huella.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,35 +14,35 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
-      <div class="navbar-list">
-        <a class="navbar-link" href="refugios.html">Refugios</a>
-        <a class="navbar-link" href="adopcion.html">Adopciones</a>
-        <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
-        <a class="navbar-link" href="donaciones.html">Donaciones</a>
-        <button class="navbar-button"><a href="login.html">Login</a></button>
-      </div>
-    </nav>
+  <header id="header">
+    <navbar></navbar>
   </header>
-  <main>
-    <a href="registro.html">registrarse</a>
-  </main>
-  <footer class="footer">
-    <div class="footer-nav">
-      <nav>
-        <a href="quienessomos.html"><p>Quienes Somos</p></a>
-        <a href="preguntasfrecuentes.html"><p>Preguntas Frecuentes</p></a>
-        <br><br><br>
-        <a href="http://facebook.com"><img src="./images/logo-face.png" alt="facebook"></a>
-        <a href="http://instagram.com"><img src="./images/logo-inst.png" alt="instagram"></a>
-        <a href="http://twitter.com"><img src="./images/logo-tw.png" alt="twitter"></a>
-        <a href="http://linkedin.com"><img src="./images/logo-linked.png" alt="linkedin"></a>
-      </nav>
-    </div>
-        <p class="footer-rights">Sitio desarrollado por el grupo</p>
-  </footer>
-</body>
 
+  <main>
+    <section class="login">
+      <h3>Inicia Sesión</h3>
+      <div class="login-container">
+        <form class="login-form" onsubmit="return validate();">
+          <label class="login-form-label" for="name">Nombre de Usuario</label><br>
+          <input class="login-form-input" type="text" name="name" id="name"><br>
+          <div id="validate_name"> &nbsp; </div>
+          <label class="login-form-label" for="password">Contraseña</label><br>
+          <input class="login-form-input" type="password" name="password" id="password"><br>
+          <div id="validate_password"> &nbsp; </div>
+          <input class="login-form-btn" type="submit" value="Iniciar"><br>
+        </form>
+      </div>
+      <p class="login-text">si todavía no tenes tu cuenta, <a class="login-link" href="registro.html">registrate ahora</a>.</p>
+    </section>
+  </main>
+  
+  <footer class="footer" id="footer">
+    <foot></foot>
+  </footer>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/login.js"></script>
+</body>
 </html>
