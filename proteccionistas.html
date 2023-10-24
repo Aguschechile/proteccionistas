@@ -19,8 +19,15 @@
   </header>
 
   <main>
-    <h2>...</h2>
-    <img src="" alt="">
+    <section>
+
+    </section>
+    <h2>Reseñas</h2>
+    <div id="api">
+      <div v-for="i in datos">
+        <img :src="i.picture.large" :alt="i.name.first + i.name.last"></div>
+      </div>
+    </div>
   </main>
 
   <footer class="footer" id="footer">
@@ -30,6 +37,7 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="/js/header.js"></script>
   <script src="/js/footer.js"></script>
+  <script src="/js/api.js"></script>
 </body>
 
 </html>
