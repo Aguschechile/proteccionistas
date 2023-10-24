@@ -9,6 +9,10 @@
     justify-content: center;
 }
 
+.footer-nav-links {
+    justify-content: space-evenly;
+}
+
 .footer-rights {
     color: beige;
     padding: 10px;
