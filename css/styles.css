@@ -7,6 +7,7 @@
 @import "register.css";
 @import "login.css";
 @import "footer.css";
+@import "preguntasf.css";
 
 *{
     /*selector universal: a todas las etiquetas dale este estilo*/
