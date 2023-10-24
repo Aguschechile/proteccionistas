@@ -14,18 +14,10 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
-      <div class="navbar-list">
-        <a class="navbar-link" href="refugios.html">Refugios</a>
-        <a class="navbar-link" href="adopcion.html">Adopciones</a>
-        <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
-        <a class="navbar-link" href="donaciones.html">Donaciones</a>
-        <button class="navbar-button"><a href="login.html">Login</a></button>
-      </div>
-    </nav>
+  <header id="header">
+    <navbar></navbar>
   </header>
+
   <main>
     <section class="login">
       <h3>Inicia Sesión</h3>
@@ -43,16 +35,14 @@
       <p class="login-text">si todavía no tenes tu cuenta, <a class="login-link" href="registro.html">registrate ahora</a>.</p>
     </section>
   </main>
-  <footer class="footer">
-    <div class="footer-nav">
-      <nav>
-        <a href="quienessomos.html">Quienes Somos</a>
-        <a href="preguntasfrecuentes.html">Preguntas Frecuentes</a>
-      </nav>
-    </div>
-    <p class="footer-rights">Sitio desarrollado por el grupo</p>
+  
+  <footer class="footer" id="footer">
+    <foot></foot>
   </footer>
-
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/footer.js"></script>
   <script src="/js/login.js"></script>
 </body>
 </html>
