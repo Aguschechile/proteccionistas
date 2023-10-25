@@ -1,0 +1,40 @@
+.PimerVideo{
+    margin-top: 20px;
+    text-align: center;;
+}
+
+.SegundoVideo{
+    display: inline-block;
+    text-align: left;
+    margin: 0 10px;
+    width: 160%;
+    
+}
+
+video {
+    display:inline-block;
+    width: 20%; 
+    border:10px solid #097509; 
+    border-radius: 8px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.descripcion-video {
+    margin-top: 10px;
+    text-align:start;
+    font-family: Arial, sans-serif;
+    color:rgb(20, 15, 2);  
+    font-size: 15px;
+}
+
+h2 {
+color:rgb(6, 185, 60); 
+text-align: center; 
+font-family: Arial, sans-serif; 
+}
+
+.texto-ejemplo {
+font-family: Arial, sans-serif;
+color: rgb(1, 32, 8); 
+font-size: 14px; 
+}
