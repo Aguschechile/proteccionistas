@@ -5,9 +5,11 @@
 @import "donation.css";
 @import "about-us.css";
 @import "register.css";
+@import "preguntasf.css";
+@import "proteccionistas.css";
 @import "login.css";
 @import "footer.css";
-@import "preguntasf.css";
+
 
 *{
     /*selector universal: a todas las etiquetas dale este estilo*/
@@ -92,40 +94,3 @@ main {
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
   }
-
-        
-.PimerVideo{
-            margin-top: 20px;
-            text-align: center;;
-        }
-
-.SegundoVideo{
-            display: inline-block;
-            text-align: left;
-            margin: 0 10px;
-            width: 160%;
-            
-        }
-
-video {
-            display:inline-block;
-            width: 20%; 
-            border:10px solid #097509; 
-            border-radius: 8px; 
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
-        }
-
-.descripcion-video {
-            margin-top: 10px;
-            text-align:start;
-            font-family: 'Montserrat', sans-serif;
-            color:rgb(20, 15, 2);  
-            font-size: 15px;
-        }
-
-
-.texto-ejemplo {
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(1, 32, 8); 
-    font-size: 14px; 
-}
