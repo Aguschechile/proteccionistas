@@ -20,24 +20,38 @@
 
   <main>
     <section>
-
-    </section>
-    <h2>Reseñas</h2>
-    <div id="api">
-      <div v-for="i in datos">
-        <img :src="i.picture.large" :alt="i.name.first + i.name.last"></div>
+      <h2> Nuestros Proteccionistas</h2>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <div class="PrimerVideo">
+        <video controls>
+          <source src="./images/Refugio.mp4" type="video/mp4">
+          Tu navegador no admite la etiqueta de video.
+        </video>
+        <p class="descripcion-video">Ella es Patricia y trabaja en el refugio San Francisco de Asís</p>
       </div>
-    </div>
+      <br>
+      <br>
+      <br>
+
+      <div class="SegundoVideo">
+        <video controls>
+          <source src="./images/Refugio_2.mp4" type="video/mp4">
+          Tu navegador no admite la etiqueta de video.
+        </video>
+        <p class="descripcion-video">Ella es Mariana y trabaja en el Gran Refugio en General Rodriguez</p>
+      </div>
+      </div><br><br>
+    </section>
   </main>
 
   <footer class="footer" id="footer">
     <foot></foot>
   </footer>
-  
+
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="/js/header.js"></script>
   <script src="/js/footer.js"></script>
-  <script src="/js/api.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
