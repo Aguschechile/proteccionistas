@@ -3,7 +3,7 @@ const navbar = {
     <nav class="navbar">
         <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
         <div class="navbar-mobile">
-            <button class="navbar-button"><a href="login.html">Login</a></button>
+            <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
             <i class="bi bi-list"></i>
         </div>
         <div class="navbar-list">
