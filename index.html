@@ -40,11 +40,16 @@
             <a class="hero-links-button" href="login.html">Ingresar</a>
           </div>
           </section>
-          <section class="about">
-            <h3 class="about-title">¿Quienes somos?</h3>
-            <p class="about-text">
-              Huellitas, es una entidad sin ánimo de lucro, comprometida con promover mediante diferentes actividades la adopción responsable, la conciencia de esterilizar y recuperar animales en condición de maltrato y abandono con el fin de enseñar, contribuir y entregar una calidad de vida a todos los perros y gatos que lo necesiten.
-            </p>
+          <section class="reviews">
+            <h3 class="reviews-title">Reseñas</h3>
+              <div class="reviews-container" id="api">
+                <div class="reviews-cards-container">
+                  <div class="reviews-card col-2 col-s-12" v-for="i in datos">
+                    <img class="reviews-card-img" :src="i.picture.large" :alt="i.name.first + i.name.last">
+                    <p>Encontró su mascota en huellitas y nos recomienda. </p>
+                  </div>
+                </div>
+              </div>
           </section>
       </main>
 
@@ -55,6 +60,7 @@
       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
       <script src="/js/header.js"></script>
       <script src="/js/footer.js"></script>
+      <script src="/js/api.js"></script>
       <script src="/js/main.js"></script>
     </body>
 </html>

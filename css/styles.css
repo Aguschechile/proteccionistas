@@ -1,6 +1,6 @@
 @import "navbar.css";
 @import "hero.css";
-@import "about.css";
+@import "reviews.css";
 @import "adoption.css";
 @import "donation.css";
 @import "about-us.css";
@@ -59,7 +59,7 @@ main {
 
 /* For mobile phones: */
 [class*="col-"] { /*a todas las clases que comiencen con col- ponele 100%*/
-    width: 100%;
+    width: 90%;
   }
   
   @media only screen and (min-width: 600px) { /* entonces >= 600px  */

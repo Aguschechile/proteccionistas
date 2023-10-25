@@ -1,0 +1,42 @@
+.reviews {
+    padding: 20px;
+}
+
+.reviews-title {
+    margin: 10px 10px 25px 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+}
+
+.reviews-cards-container {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+}
+
+.reviews-card {
+    
+    border: 1px solid black;
+}
+
+.reviews-card-img {
+    max-width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+
+@media only screen and (max-width: 767px) {
+    .reviews-cards-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .reviews-card {
+        width: 80%;
+    }
+}
