@@ -19,6 +19,7 @@ ul li{
 .Contenedor{
     position: relative;
     margin: auto;
+    padding: 10px;
     display: grid;
     grid-template-columns: 600px 900px ;
     gap: 10px;
@@ -90,4 +91,21 @@ background-color: rgb(186, 146, 72);
 justify-content: center;
 align-items: center;
 transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 768px) {
+    .Contenedor {
+        position: relative;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 0% 100% ;
+        gap: 10px;
+        justify-content: center;
+      
+    }
+    
+    .imgperrito{
+        display:none;
+    }
+    
 }
