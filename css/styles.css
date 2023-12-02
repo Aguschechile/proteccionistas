@@ -46,7 +46,6 @@ main {
     min-height: 75vh; 
 }
 
-<<<<<<< HEAD
 .row::after {
     content: "";
     clear: both;
@@ -93,7 +92,6 @@ main {
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
   }
-=======
 
         
 .PimerVideo{
@@ -139,4 +137,3 @@ h2 {
     color: rgb(1, 32, 8); 
     font-size: 14px; 
 }
->>>>>>> c0f9aba7101c3789143f44e0de980c6a71b565c6
