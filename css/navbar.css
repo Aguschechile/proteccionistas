@@ -35,6 +35,16 @@ nav a {
     display: none;
     align-items: center;
 }
+
+.navbar-button-mobile {
+    padding: 10px;
+    font-size: 16px;
+    background-color:rgb(163, 112, 18);
+    text-decoration:none;
+    border: 1px solid rgb(2, 109, 8);
+    border-radius: 5px;    
+    display:  inline-block;
+}
  
 .navbar-link {
     padding: 10px;
@@ -58,8 +68,14 @@ nav a {
     .navbar-mobile {
         display: flex;
     }
-    .navbar-list {
+    .navbar-button-mobile {
         display: none;
+    }
+    /* .navbar-list {
+        display: none;
+    } */
+    .navbar {
+        flex-wrap: wrap;
     }
 }
 

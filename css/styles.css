@@ -1,13 +1,15 @@
 @import "navbar.css";
 @import "hero.css";
-@import "about.css";
+@import "reviews.css";
 @import "adoption.css";
 @import "donation.css";
 @import "about-us.css";
 @import "register.css";
+@import "preguntasf.css";
+@import "proteccionistas.css";
 @import "login.css";
 @import "footer.css";
-@import "preguntasf.css";
+
 
 *{
     /*selector universal: a todas las etiquetas dale este estilo*/
@@ -59,7 +61,7 @@ main {
 
 /* For mobile phones: */
 [class*="col-"] { /*a todas las clases que comiencen con col- ponele 100%*/
-    width: 100%;
+    width: 90%;
   }
   
   @media only screen and (min-width: 600px) { /* entonces >= 600px  */
@@ -91,6 +93,7 @@ main {
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+<<<<<<< HEAD
   }
 
         
@@ -137,3 +140,6 @@ h2 {
     color: rgb(1, 32, 8); 
     font-size: 14px; 
 }
+=======
+  }
+>>>>>>> 6d1674b913c76cc55558df4191b0c52c4dbbf87e

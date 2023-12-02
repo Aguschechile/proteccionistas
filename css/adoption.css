@@ -4,7 +4,8 @@
 
 .adoption-title {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 25px;
+    
 }
 
 .adoption-text {
@@ -17,7 +18,8 @@ ul li{
 
 .Contenedor{
     position: relative;
-    margin: 100px;
+    margin: auto;
+    padding: 10px;
     display: grid;
     grid-template-columns: 600px 900px ;
     gap: 10px;
@@ -29,6 +31,10 @@ ul li{
 
     grid-row-start: 1;
     grid-row-end: 5;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
 
@@ -39,7 +45,7 @@ ul li{
 
 .card{
     position: relative;
-    width: auto;
+    width: 100%;
     height: auto;
     background-color: white;
     display: flex;
@@ -85,4 +91,21 @@ background-color: rgb(186, 146, 72);
 justify-content: center;
 align-items: center;
 transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 768px) {
+    .Contenedor {
+        position: relative;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 0% 100% ;
+        gap: 10px;
+        justify-content: center;
+      
+    }
+    
+    .imgperrito{
+        display:none;
+    }
+    
 }
