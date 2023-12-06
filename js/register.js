@@ -30,7 +30,7 @@ function submitForm() {
             try {
                 console.log("Redirecting to index.html");
                 // window.location.href = 'http://127.0.0.1:5500/index.html';
-                window.location.href = 'https://huellitas-tpo.netlify.app/index.html';
+                window.location.href = 'https://huellitastpo.netlify.app/index.html';
             } catch (error) {
                 console.error('Error during redirect:', error);
             }
