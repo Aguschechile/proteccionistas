@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE= edge">
+  <meta name="viewport" content="width= device-width, initial-scale= 1.0">
+  <link rel="shortcut icon" href="./images/huella.png" type="image/x-icon">
+  <title>Huellitas | Adopciones</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <header id="header">
+    <nav class="navbar">
+      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
+      <div class="navbar-mobile">
+        <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
+        <i class="bi bi-list"></i>
+      </div>
+      <div class="navbar-list">
+        <a class="navbar-link" href="refugios.html">Refugios</a>
+        <a class="navbar-link" href="adopcion.html">Adopciones</a>
+        <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
+        <a class="navbar-link" href="donaciones.html">Donaciones</a>
+        <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
+        <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container" id="adoptions">
+      <form  style="background-color: aliceblue;margin:10px auto ; width: 400px; padding: 20px;">
+        <h1>Agregar Adopción</h1>
+        <div class="mb-3">
+          <label for="txtNombre">Nombre</label>
+          <input type="text" name="txtNombre" id="txtNombre" v-model="nombre">
+        </div>
+        <div class="mb-3">
+          <label for="txtRaza">Raza</label>
+          <input type="text" name="txtRaza" id="txtRaza" v-model="raza">
+        </div>
+        <div class="mb-3">
+          <label for="txtSexo">Sexo</label>
+          <input type="text" name="txtSexo" id="txtSexo" v-model="sexo">
+        </div>
+        <div class="mb-3">
+          <label for="txtEdad">Edad</label>
+          <input type="text" name="txtEdad" id="txtEdad" v-model="edad">
+        </div>
+        <div class="mb-3">
+          <label for="txtRefugio">Refugio</label>
+          <input type="text" name="txtRefugio" id="txtRefugio" v-model="refugio">
+        </div>
+        <div class="mb-3">
+          <label for="txtContacto">Contacto</label>
+          <input type="text" name="txtContacto" id="txtContacto" v-model="contacto">
+        </div>
+        <div class="mb-3">
+          <label for="txtImagen">Imagen</label>
+          <input type="text" name="txtImagen" id="txtImagen" v-model="imagen">
+          <img width="100" :src="imagen" alt="">
+        </div>
+          <button type="button" class="btn btn-success" v-on:click="grabar()">Grabar</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <foot></foot>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/adoption.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+
+</html>

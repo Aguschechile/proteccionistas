@@ -9,18 +9,81 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
   <header id="header">
-    <navbar></navbar>
+    <nav class="navbar">
+      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
+      <div class="navbar-mobile">
+          <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
+          <i class="bi bi-list"></i>
+      </div>
+      <div class="navbar-list">
+          <a class="navbar-link" href="refugios.html">Refugios</a>
+          <a class="navbar-link" href="adopcion.html">Adopciones</a>
+          <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
+          <a class="navbar-link" href="donaciones.html">Donaciones</a>
+          <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
+          <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)">Logout</button>
+      </div>
+    </nav>
   </header>
   
   <main>
     <section class="adoption">
       <h1>Adopción</h1>
       <h3>Toda la información que necesitas para adoptar a tu nueva mascota.</h3>
-    <div class="Contenedor">
+      <div id="adoptions" class="container">
+        <div v-if="error">
+          <p>Lo sentimos , ........</p>
+        </div>
+        <div v-else>
+          <section v-if="cargando">
+            <div class="spinner-border"></div>
+            <p>Cargando .....</p>
+          </section>
+          <section v-else>
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Raza</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Refugio</th>
+                    <th scope="col">Contacto</th>
+                    <th scope="col">Foto</th>
+                    <th scope="col"><a v-if="isAdmin" class="btn btn-success" href="adopcion-nueva.html">Agregar Adopción</a></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="" v-for="animal in animales">
+                    <td scope="row">{{animal.id}}</td>
+                    <td>{{animal.nombre}}</td>
+                    <td>{{animal.raza}}</td>
+                    <td>{{animal.sexo}}</td>
+                    <td>{{animal.edad}}</td>
+                    <td>{{animal.refugio}}</td>
+                    <td>{{animal.contacto}}</td>
+                    <td>
+                      <img width="60"  :src="animal.imagen" :alt="animal.nombre">
+                    </td>
+                    <!-- v-if="isAdmin" -->
+                    <td> 
+                      <a v-if="isAdmin" class="btn btn-primary" :href="'adopcion-modif.html?id='+ animal.id" >Editar</a>
+                      <button v-if="isAdmin" type="button" class="btn btn-danger" v-on:click="eliminar(animal.id)" >Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="Contenedor">
         <div id="imagadop">
           <img src="images/dogg.avif" alt="Perrito">
         </div>
@@ -74,7 +137,7 @@
             </p>
           </div>
         </div>
-    </div>
+      </div>
     </section>
   </main>
 
@@ -82,8 +145,11 @@
     <foot></foot>
   </footer>
   
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="/js/header.js"></script>
+  <script type="module" src="/js/adoption.js"></script>
   <script src="/js/footer.js"></script>
+  <script type="module" src="/js/login.js"></script>
 </body>
 </html>

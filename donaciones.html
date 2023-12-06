@@ -12,7 +12,21 @@
 </head>
 <body>
   <header id="header">
-    <navbar></navbar>
+    <nav class="navbar">
+      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
+      <div class="navbar-mobile">
+        <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
+        <i class="bi bi-list"></i>
+      </div>
+      <div class="navbar-list">
+        <a class="navbar-link" href="refugios.html">Refugios</a>
+        <a class="navbar-link" href="adopcion.html">Adopciones</a>
+        <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
+        <a class="navbar-link" href="donaciones.html">Donaciones</a>
+        <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
+        <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)">Logout</button>
+      </div>
+    </nav>
   </header>
   
   <main>
@@ -26,7 +40,7 @@
 
     <div class="gridcontainer">
 
-      <div id="gatitosenlinea"> <img src="images/gatitosenlinea.jpg" alt="gatitos"></div>
+      <div id="gatitosenlinea"> <img class="gatitosenlinea" src="images/gatitosenlinea.jpg" alt="gatitos"></div>
      
       <div class="griditem1">
         <h4 class="grid-item-1-title">DATOS PARA DONACION</h4> <br><br>
@@ -69,6 +83,5 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="/js/header.js"></script>
   <script src="/js/footer.js"></script>
-  <script src="./js/main.js"></script>
 </body>
 </html>

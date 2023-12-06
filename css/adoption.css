@@ -2,6 +2,7 @@
     padding: 20px;
 }
 
+
 .adoption-title {
     margin-bottom: 20px;
     font-size: 25px;
@@ -101,8 +102,15 @@ transform: rotateY(180deg);
         grid-template-columns: 0% 100% ;
         gap: 10px;
         justify-content: center;
-      
+
+        }
+        
     }
     
     
+@media (max-width: 768px) {
+    #imagadop {
+        visibility: hidden;    
+    }
+
 }
