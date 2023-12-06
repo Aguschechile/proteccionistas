@@ -1,8 +1,10 @@
-from flask import Flask ,jsonify ,request
+from flask import Flask ,jsonify ,request, redirect
 # del modulo flask importar la clase Flask y los métodos jsonify,request
 from flask_cors import CORS       # del modulo flask_cors importar CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
 app=Flask(__name__)  # crear el objeto app de la clase Flask
 CORS(app) #modulo cors es para que me permita acceder desde el frontend al backend
@@ -14,7 +16,6 @@ app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:Pablo2350.@localhost
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False #none
 db= SQLAlchemy(app)   #crea el objeto db de la clase SQLAlquemy
 ma=Marshmallow(app)   #crea el objeto ma de de la clase Marshmallow
-
 
 # defino las tablas
 class Animales(db.Model):   # la clase Animales hereda de db.Model    
@@ -56,6 +57,8 @@ class Users(db.Model):
 
 
 with app.app_context():
+    Session = sessionmaker(bind=db.engine)
+    session = Session()
     db.create_all()  # aqui crea todas las tablas
 #  ************************************************************
 class AnimalesSchema(ma.Schema):
@@ -72,8 +75,8 @@ user_schema=UsersSchema()            # El objeto Users_schema es para traer un u
 
 
 # crea los endpoint o rutas (json)
-
-
+isLogged = False
+isAdmin = False
 
 @app.route('/register', methods=['POST']) # crea ruta o endpoint
 def register():
@@ -86,18 +89,29 @@ def register():
     new_user=Users(nombre,apellido,email,contrasena,isAdmin)
     db.session.add(new_user)
     db.session.commit() # confirma el alta
-    return user_schema.jsonify(new_user)
+    return redirect('https://huellitas-tpo.netlify.app/index.html')
 
 @app.route('/login', methods=['POST']) # crea ruta o endpoint
 def login():
-    #print(request.json)  # request.json contiene el json que envio el cliente
-    email=request.json['email']
-    contrasena=request.json['contrasena']
-    user=Users.query.get(email)
-    print(user)
-    pass
-    # new_user=Users(nombre,apellido,email,contrasena,isAdmin)
-    # return user_schema.jsonify(user)
+    print(request.json)
+    email = request.json['email']
+    password = request.json['contrasena']
+
+    user = Users.query.filter_by(email=email).first()
+
+    if user and user.contrasena == password:
+        global isLogged
+        isLogged = True
+        print(isLogged)
+        if user.isAdmin:
+            global isAdmin
+            isAdmin = True
+            print(isAdmin)
+        return redirect('https://huellitas-tpo.netlify.app/index.html')
+    else:
+        return jsonify({"message": "Invalid credentials"}), 401
+
+    # return redirect('')
 
 @app.route('/adopciones',methods=['GET'])
 def get_animales():
