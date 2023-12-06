@@ -1,23 +1,3 @@
-// const navbar = {
-//     template:`
-//     <nav class="navbar">
-//         <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
-//         <div class="navbar-mobile">
-//             <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
-//             <i class="bi bi-list"></i>
-//         </div>
-//         <div class="navbar-list">
-//             <a class="navbar-link" href="refugios.html">Refugios</a>
-//             <a class="navbar-link" href="adopcion.html">Adopciones</a>
-//             <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
-//             <a class="navbar-link" href="donaciones.html">Donaciones</a>
-//             <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
-//             <button v-if="isLogged" class="navbar-button"><a href="login.html">Logout</a></button>
-//         </div>
-//     </nav>
-//     `,
-// }
-
 const { createApp } = Vue
 createApp({
     data() {
@@ -51,7 +31,9 @@ createApp({
                     console.log(Logout.isLoggedt)
                     this.isAdmin = Logout.isAdmin;
                     console.log(Logout.isAdmin)
-                    window.location.href = 'http://127.0.0.1:5500/index.html';
+                    // window.location.href = 'http://127.0.0.1:5500/index.html';
+                    window.location.href = 'https://huellitas-tpo.netlify.app/index.html';
+                    
                 },
             ).catch(err => {
                 console.log(err);
@@ -63,7 +45,4 @@ createApp({
     created() {
         this.fetchAuth(this.urlAuth)
     },
-    // components:{
-    //     'navbar':navbar,
-    // }
 }).mount("#header")
