@@ -42,7 +42,7 @@
                     <th scope="col">Refugio</th>
                     <th scope="col">Contacto</th>
                     <th scope="col">Foto</th>
-                    <th scope="col"><a v-if="login.isAdmin" class="btn btn-success" href="adopcion-nueva.html">Agregar Adopción</a></th>
+                    <th scope="col"><a class="btn btn-success" href="adopcion-nueva.html">Agregar Adopción</a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -57,9 +57,10 @@
                     <td>
                       <img width="60"  :src="animal.imagen" :alt="animal.nombre">
                     </td>
-                    <td>
-                      <a v-if="login.isAdmin" class="btn btn-primary" :href="'adopcion-modif.html?id='+ animal.id" >Editar</a>
-                      <button v-if="login.isAdmin" type="button" class="btn btn-danger" v-on:click="eliminar(animal.id)" >Eliminar</button>
+                    <!-- v-if="isAdmin" -->
+                    <td> 
+                      <a class="btn btn-primary" :href="'adopcion-modif.html?id='+ animal.id" >Editar</a>
+                      <button type="button" class="btn btn-danger" v-on:click="eliminar(animal.id)" >Eliminar</button>
                     </td>
                   </tr>
                 </tbody>

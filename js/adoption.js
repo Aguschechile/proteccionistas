@@ -1,4 +1,4 @@
-import { loginState } from './login';
+// import { loginState } from './login';
 
 const { createAdoption } = Vue
 
@@ -10,8 +10,8 @@ createApp({
             url: 'https://pablo2311.pythonanywhere.com/adopciones',
             error: false,
             cargando: true,
-            isLogged: loginState.isLogged,
-            isAdmin: loginState.isAdmin,
+            // isLogged: loginState.isLogged,
+            // isAdmin: loginState.isAdmin,
             /*atributos para guardar valores del form*/
             id: 0,
             nombre: "",
