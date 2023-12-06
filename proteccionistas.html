@@ -15,44 +15,24 @@
 
 <body>
   <header id="header">
-    <navbar></navbar>
+    <nav class="navbar">
+      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
+      <div class="navbar-mobile">
+        <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
+        <i class="bi bi-list"></i>
+      </div>
+      <div class="navbar-list">
+        <a class="navbar-link" href="refugios.html">Refugios</a>
+        <a class="navbar-link" href="adopcion.html">Adopciones</a>
+        <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
+        <a class="navbar-link" href="donaciones.html">Donaciones</a>
+        <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
+        <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)">Logout</button>
+      </div>
+    </nav>
   </header>
 
   <main>
-<<<<<<< HEAD
-    <h2> Nuestros Proteccionistas</h2>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <div class="PrimerVideo">
-          <video controls>
-              <source src="./images/Refugio.mp4" type="video/mp4">
-              Tu navegador no admite la etiqueta de video.
-          </video>
-        <p class="descripcion-video">Ella es Patricia y trabaja en el refugio San Francisco de Asís</p>
-      </div>
-        <br>
-        <br>
-        <br>
-      
-      <div class="SegundoVideo">
-          <video controls>
-              <source src="./images/Refugio_2.mp4" type="video/mp4">
-              Tu navegador no admite la etiqueta de video.
-          </video>
-          <p class="descripcion-video">Ella es Mariana y trabaja en el Gran Refugio en General Rodriguez</p>
-      </div>
-  </div>
-   <script src="script.js"></script>
-    
-
-
-
-  </main>
-
-  <footer class="footer" id="footer">
-    <foot></foot>
-  </footer>
-=======
->>>>>>> 6d1674b913c76cc55558df4191b0c52c4dbbf87e
   
       <h2> Nuestros Proteccionistas</h2>
       <div class="contenedor-video">
@@ -87,10 +67,6 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="/js/header.js"></script>
   <script src="/js/footer.js"></script>
-<<<<<<< HEAD
-=======
-  <!-- <script src="script.js"></script> -->
->>>>>>> 6d1674b913c76cc55558df4191b0c52c4dbbf87e
 </body>
 </html>
 

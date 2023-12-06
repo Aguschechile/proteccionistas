@@ -1,8 +1,3 @@
-const loginState = {
-    isLogged: false,
-    isAdmin: false,
-};
-
 function submitForm() {
     let name = document.getElementById("name").value;
     let password = document.getElementById("password").value;
@@ -34,7 +29,7 @@ function submitForm() {
         if (response.ok == true) {
             try {
                 console.log("Redirecting to index.html");
-                // window.location.href = 'http://127.0.0.1:5500/index.html';
+                window.location.href = 'http://127.0.0.1:5500/index.html';
                 // window.location.href = 'https://huellitas-tpo.netlify.app/index.html';
             } catch (error) {
                 console.error('Error during redirect:', error);
@@ -44,11 +39,6 @@ function submitForm() {
     })
     .then(responseData => {
         console.log('Response data:', responseData);
-        if (responseData.success) {
-            loginState.isLogged = true;
-            loginState.isAdmin = responseData.user.isAdmin;
-            console.log(loginState.isLogged, loginState.isAdmin);
-        }
     })
     .catch(error => {
         console.error('Error during fetch:', error);
@@ -76,5 +66,3 @@ function validate(name, password) {
 
     return !error;  // Return true if validation passed, false if there are errors
 }
-
-export { loginState };

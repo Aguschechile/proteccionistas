@@ -1,5 +1,3 @@
-// import { loginState } from './login';
-
 const { createAdoption } = Vue
 
 createApp({
@@ -8,10 +6,11 @@ createApp({
             animales: [],
             // url:'http://localhost:5000/adopciones',
             url: 'https://pablo2311.pythonanywhere.com/adopciones',
+            urlAuth: 'https://pablo2311.pythonanywhere.com/login/status',
             error: false,
             cargando: true,
-            // isLogged: loginState.isLogged,
-            // isAdmin: loginState.isAdmin,
+            isLogged: false,
+            isAdmin: false,
             /*atributos para guardar valores del form*/
             id: 0,
             nombre: "",
@@ -24,6 +23,19 @@ createApp({
         }
     },
     methods: {
+        fetchAuth(urlAuth) {
+            fetch(urlAuth).then(
+                response => response.json()
+            ).then(
+                Auth => {
+                    this.isLogged = Auth.isLogged;
+                    this.isAdmin = Auth.isAdmin
+                }
+            ).catch(err => {
+                console.log(err);
+                this.error = true
+            })
+        },
         fetchData(url) {
             fetch(url).then(
                 response => response.json()
@@ -78,6 +90,7 @@ createApp({
     },
     created() {
         this.fetchData(this.url)
+        this.fetchAuth(this.urlAuth)
     },
 
 }).mount('#adoptions')

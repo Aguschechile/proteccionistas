@@ -13,7 +13,21 @@
 </head>
 <body>
   <header id="header">
-    <navbar></navbar>
+    <nav class="navbar">
+      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
+      <div class="navbar-mobile">
+          <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
+          <i class="bi bi-list"></i>
+      </div>
+      <div class="navbar-list">
+          <a class="navbar-link" href="refugios.html">Refugios</a>
+          <a class="navbar-link" href="adopcion.html">Adopciones</a>
+          <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
+          <a class="navbar-link" href="donaciones.html">Donaciones</a>
+          <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
+          <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)">Logout</button>
+      </div>
+    </nav>
   </header>
   
   <main>
@@ -42,7 +56,7 @@
                     <th scope="col">Refugio</th>
                     <th scope="col">Contacto</th>
                     <th scope="col">Foto</th>
-                    <th scope="col"><a class="btn btn-success" href="adopcion-nueva.html">Agregar Adopción</a></th>
+                    <th scope="col"><a v-if="isAdmin" class="btn btn-success" href="adopcion-nueva.html">Agregar Adopción</a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -59,8 +73,8 @@
                     </td>
                     <!-- v-if="isAdmin" -->
                     <td> 
-                      <a class="btn btn-primary" :href="'adopcion-modif.html?id='+ animal.id" >Editar</a>
-                      <button type="button" class="btn btn-danger" v-on:click="eliminar(animal.id)" >Eliminar</button>
+                      <a v-if="isAdmin" class="btn btn-primary" :href="'adopcion-modif.html?id='+ animal.id" >Editar</a>
+                      <button v-if="isAdmin" type="button" class="btn btn-danger" v-on:click="eliminar(animal.id)" >Eliminar</button>
                     </td>
                   </tr>
                 </tbody>
