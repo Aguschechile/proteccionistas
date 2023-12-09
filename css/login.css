@@ -1,0 +1,64 @@
+.login {
+    background-color: #bbb;
+    margin: 3vh 30vw;
+    padding: 15px;
+    width: auto;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.login-form-label {
+    margin-left: 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.login-form-input {
+    margin: 5px; 
+    border: 2px solid #000;
+    border-radius: 20px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+}
+
+#validate_name {
+    color: red;
+    text-align: center;
+}
+
+#validate_password {
+    color: red;
+    text-align: center;
+}
+
+.login-form-btn {
+    background-color: lightgreen;
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    width: 75px;
+    cursor: pointer;
+}
+
+.login-link {
+    color: lightgreen;
+    text-decoration: none;
+}
+
+.login-text {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .login {
+        margin: 3vh 5vw;
+    }
+}

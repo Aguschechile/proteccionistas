@@ -1,0 +1,93 @@
+.contenedor-video{
+    position:relative;
+    width: 90%;
+    margin: 2em auto;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "PrimerVideo1 SegundoVideo2"
+    "descripcionvideo1 descripcionvideo2";
+    text-align: center;
+    justify-content: center;
+
+}
+
+.PrimerVideo{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    grid-area: PrimerVideo1;
+
+
+}
+
+.SegundoVideo{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    grid-area: SegundoVideo2;
+    
+}
+
+video {
+    display:flex;
+    width: 50%; 
+    border:10px solid #097509; 
+    border-radius: 8px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.descripcion-video1 {
+
+    color:rgb(20, 15, 2);  
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    grid-area: descripcionvideo1;
+}
+
+.descripcion-video2 {
+   
+    color:rgb(20, 15, 2);  
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    grid-area: descripcionvideo2;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .contenedor-video {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));        
+        grid-template-areas:"PrimerVideo1"
+                            "descripcionvideo1"
+                            "SegundoVideo2"
+                            "descripcionvideo2";  
+        
+    
+        }
+}
+
+
+
+
+
+/*h2 {
+color:rgb(6, 185, 60); 
+text-align: center; 
+font-family: Arial, sans-serif; 
+}
+
+.texto-ejemplo {
+font-family: Arial, sans-serif;
+color: rgb(1, 32, 8); 
+font-size: 14px; 
+} */

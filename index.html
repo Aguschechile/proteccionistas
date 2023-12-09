@@ -1,40 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE= edge">
-        <meta name="viewport" content="width= device-width, initial-scale= 1.0">
-        <title>Proyecto</title>
-        <link rel="shortcut icon" href="" type="image/x-icon">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE= edge">
+    <meta name="viewport" content="width= device-width, initial-scale= 1.0">
+    <title>Huellitas</title>
+    <link rel="shortcut icon" href="./images/huella.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css">
 
-    </head>
+  </head>
+  <body>
+    <header id="header">
+      <nav class="navbar">
+        <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
+        <div class="navbar-mobile">
+          <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
+          <i class="bi bi-list"></i>
+        </div>
+        <div class="navbar-list">
+          <a class="navbar-link" href="refugios.html">Refugios</a>
+          <a class="navbar-link" href="adopcion.html">Adopciones</a>
+          <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
+          <a class="navbar-link" href="donaciones.html">Donaciones</a>
+          <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
+          <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)"><a>Logout</a></button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1 class="hero-title">Adoptá y salvá vidas</h1>
+        <h3 class="hero-subtitle">Encontrá a ese compañero que buscas</h3>
+        <p class="hero-text">Se formó con el fin de poder rescatar, rehabilitar y luego dar en adopción aquellos perros, gatos abandonados o maltratados. 
+            Para eso, unimos en una sola página a nuestros amigos proteccionistas, asi podés escontrar el lugar mas cercano a tu domicilio para adoptar o denunciar a un animal 
+            abandonado o maltratado.
+        </p>
+        <div class="hero-images">
+          <img class="img-1" src="./images/hero-1.jpg" alt="">
+          <img class="img-2" src="./images/hero-2.jpg" alt="">
+          <img class="img-3" src="./images/hero-3.jpg" alt="">
+        </div>
+        <div class="hero-links">
+          <p class="hero-text">
+            Para acceder a todas las funcionalidades, registrate o ingresa a tu cuenta.
+          </p>
+          <a class="hero-links-button" href="register.html">Registrarse</a>
+          <a class="hero-links-button" href="login.html">Ingresar</a>
+        </div>
+        </section>
+        <section class="reviews">
+          <h3 class="reviews-title">Reseñas</h3>
+            <div class="reviews-container" id="api">
+              <div class="reviews-cards-container">
+                <div class="reviews-card col-2 col-s-12" v-for="i in datos">
+                  <img class="reviews-card-img" :src="i.picture.large" :alt="i.name.first + i.name.last">
+                  <p>Encontró su mascota en huellitas y nos recomienda. </p>
+                </div>
+              </div>
+            </div>
+        </section>
+    </main>
 
-    <body>
-        <header>
-            <h1></h1>
-            <NAV>
-                <a href="index.html">Home</a>
-                <a href="quienessomos.html">Quienes Somos</a>
-                <a href="proteccionistas.html">Proteccionistas</a>
-                <a href="registro.html">Registro</a>
-                <a href="login.html">Login</a>
-                <a href="preguntasfrecuentes.html">Preguntas Frecuentes</a>
+      <footer class="footer" id="footer">
+        <foot></foot>
+      </footer>
 
-            </NAV>
-            <hr>
-
-        </header>
-
-        <main>
-            <h2>...</h2>
-            <img src="" alt="">
-
-        </main>
-
-        <footer>
-            <hr>
-            <p >Sitio desarrollado por el grupo</p>
-
-        </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <script src="/js/header.js"></script>
+      <script src="/js/footer.js"></script>
+      <script src="/js/api.js"></script>
+      <script type="module" src="/js/login.js"></script>
     </body>
 </html>

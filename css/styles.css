@@ -1,0 +1,96 @@
+@import "navbar.css";
+@import "hero.css";
+@import "reviews.css";
+@import "adoption.css";
+@import "donation.css";
+@import "about-us.css";
+@import "register.css";
+@import "preguntasf.css";
+@import "proteccionistas.css";
+@import "login.css";
+@import "footer.css";
+
+
+*{
+    /*selector universal: a todas las etiquetas dale este estilo*/
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+h4 {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+}
+
+main {
+    min-height: 75vh; 
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+
+/* For mobile phones: */
+[class*="col-"] { /*a todas las clases que comiencen con col- ponele 100%*/
+    width: 90%;
+  }
+  
+  @media only screen and (min-width: 600px) { /* entonces >= 600px  */
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {  /* entonces >=   */
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }

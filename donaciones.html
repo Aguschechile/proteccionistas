@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE= edge">
+  <meta name="viewport" content="width= device-width, initial-scale= 1.0">
+  <link rel="shortcut icon" href="./images/huella.png" type="image/x-icon">
+  <title>Donaciones</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="header">
+    <nav class="navbar">
+      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
+      <div class="navbar-mobile">
+        <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
+        <i class="bi bi-list"></i>
+      </div>
+      <div class="navbar-list">
+        <a class="navbar-link" href="refugios.html">Refugios</a>
+        <a class="navbar-link" href="adopcion.html">Adopciones</a>
+        <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
+        <a class="navbar-link" href="donaciones.html">Donaciones</a>
+        <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
+        <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)">Logout</button>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>Donar</h1>
+    <section class="donation">
+      <h3 class="donation-title">Sumá tu apoyo a los distintos refugios y lugares de adopción de mascotas</h3>
+      <p class="donation-text">
+          ¡Tu donacion significa muchisimo! Nuestro equipo estaria encantado de recibir ayuda de quienes deseen contribuir. Las donaciones iran destinadas a la adquisicon de los elementos necesarios para el rescate y cuidado de los animales que ingresen a nuestro refugio. A continuacion se muestran los datos correspondientes para la donacion, solo debe realizar la transferencia y completar el formulario enviando su comprobante.
+      </p>
+    </section>
+
+    <div class="gridcontainer">
+
+      <div id="gatitosenlinea"> <img class="gatitosenlinea" src="images/gatitosenlinea.jpg" alt="gatitos"></div>
+     
+      <div class="griditem1">
+        <h4 class="grid-item-1-title">DATOS PARA DONACION</h4> <br><br>
+        <p>Luego de realizada la transaccion, tendras un formulario para rellenar con tus datos y el numero de transaccion correspondiente</p> 
+          <br><br>
+           <ul class="donacion">
+            <li><p>BANCO SANTANDER</p></li>
+            <li><p>CAJA DE AHORROS $ N° 555/ 555555-5</p></li>
+            <li><p>CBU 555555555555555555555</p></li>
+            <li><p>TITULAR: Huellitas proteccionistas</p> </li>
+            <li><p>CUIL: 55-55555555-5</p> </li>
+            <li><p>ALIAS: Huellitas</p></li>
+          </ul>
+        
+      </div>
+      <div class="form">
+        <form action="" class="Formadop">
+
+              <label for="Nombre" class="labelnombre">Nombre</label><br>
+              <input type="text" name="Nombre" class="Nombre"><br>
+
+              <label for="Email" class="labelemail">Email</label><br>
+              <input type="text" name="Email" class="Email">  <br>
+   
+              <label for="Mensaje" class="labelmensaje">Mensaje</label><br>
+              <textarea name="Mensaje" class="Mensaje" cols="20" rows="5"></textarea><br>
+
+            <input type="submit" value="Enviar" class="inputenviar">
+      </form>
+    </div>
+
+
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <foot></foot>
+  </footer>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+</html>

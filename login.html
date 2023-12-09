@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE= edge">
+  <meta name="viewport" content="width= device-width, initial-scale= 1.0">
+  <title>Huellitas | Log in</title>
+  <link rel="shortcut icon" href="./images/huella.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header id="header">
+    <nav class="navbar">
+      <a class="logo" href="index.html"><img class="logo-img" src="./images/huella.png" alt="">Huellitas</a>
+      <div class="navbar-mobile">
+          <button class="navbar-button-mobile"><a href="login.html">Login</a></button>
+          <i class="bi bi-list"></i>
+      </div>
+      <div class="navbar-list">
+          <a class="navbar-link" href="refugios.html">Refugios</a>
+          <a class="navbar-link" href="adopcion.html">Adopciones</a>
+          <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
+          <a class="navbar-link" href="donaciones.html">Donaciones</a>
+          <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
+          <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)" value="Logout"></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="login">
+      <h3>Inicia Sesión</h3>
+      <div class="login-container">
+        <form class="login-form" onsubmit="return submitForm()">
+          <label class="login-form-label" for="name">Nombre de Usuario</label><br>
+          <input class="login-form-input" type="text" name="name" id="name"><br>
+          <div id="validate_name"> &nbsp; </div>
+          <label class="login-form-label" for="password">Contraseña</label><br>
+          <input class="login-form-input" type="password" name="password" id="password"><br>
+          <div id="validate_password"> &nbsp; </div>
+          <input class="login-form-btn" type="submit" value="Iniciar"><br>
+        </form>
+      </div>
+      <p class="login-text">si todavía no tenes tu cuenta, <a class="login-link" href="register.html">registrate ahora</a>.</p>
+    </section>
+  </main>
+  
+  <footer class="footer" id="footer">
+    <foot></foot>
+  </footer>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>
