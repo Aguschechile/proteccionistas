@@ -1,24 +1,23 @@
-from flask import Flask ,jsonify ,request, redirect
-# del modulo flask importar la clase Flask y los métodos jsonify,request
+from flask import Flask ,jsonify ,request
 from flask_cors import CORS       # del modulo flask_cors importar CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 
 app=Flask(__name__)  # crear el objeto app de la clase Flask
 CORS(app) #modulo cors es para que me permita acceder desde el frontend al backend
 
 
 # configuro la base de datos, con el nombre el usuario y la clave
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:Pablo2350.@localhost/proteccionistas'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://Pablo2311:capopablo01@Pablo2311.mysql.pythonanywhere-services.com/Pablo2311$proteccionistas'
 # URI de la BBDD                          driver de la BD  user:clave@URLBBDD/nombreBBDD
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False #none
 db= SQLAlchemy(app)   #crea el objeto db de la clase SQLAlquemy
 ma=Marshmallow(app)   #crea el objeto ma de de la clase Marshmallow
 
+
 # defino las tablas
-class Animales(db.Model):   # la clase Animales hereda de db.Model    
+class Animales(db.Model):   # la clase Animales hereda de db.Model
     id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
     nombre=db.Column(db.String(100))
     raza=db.Column(db.String(100))
@@ -36,15 +35,15 @@ class Animales(db.Model):   # la clase Animales hereda de db.Model
         self.contacto=contacto
         self.imagen=imagen
 
-class Users(db.Model):       
-    id=db.Column(db.Integer, primary_key=True)   
+class Users(db.Model):
+    id=db.Column(db.Integer, primary_key=True)
     nombre=db.Column(db.String(100))
     apellido=db.Column(db.String(100))
     email=db.Column(db.String(255))
     contrasena=db.Column(db.String(100))
     isAdmin=db.Column(db.Boolean)
-    def __init__(self,nombre,apellido,email,contrasena,isAdmin):   
-        self.nombre=nombre   
+    def __init__(self,nombre,apellido,email,contrasena,isAdmin):
+        self.nombre=nombre
         self.apellido=apellido
         self.email=email
         self.contrasena=contrasena
@@ -74,24 +73,33 @@ animales_schema=AnimalesSchema(many=True)  # El objeto Animales_schema es para t
 user_schema=UsersSchema()            # El objeto Users_schema es para traer un usuario
 
 
+
+
 # crea los endpoint o rutas (json)
 isLogged = False
 isAdmin = False
 
 @app.route('/register', methods=['POST']) # crea ruta o endpoint
 def register():
-    #print(request.json)  # request.json contiene el json que envio el cliente
-    nombre=request.json['nombre']
-    apellido=request.json['apellido']
-    email=request.json['email']
-    contrasena=request.json['contrasena']
-    isAdmin=request.json['isAdmin']
-    new_user=Users(nombre,apellido,email,contrasena,isAdmin)
-    db.session.add(new_user)
-    db.session.commit() # confirma el alta
-    return redirect('https://huellitas-tpo.netlify.app/index.html')
+    try:
+        print(request.json)
+        nombre = request.json['nombre']
+        apellido = request.json['apellido']
+        email = request.json['email']
+        contrasena = request.json['password']
+        isAdmin = request.json.get('isAdmin')
 
-@app.route('/login', methods=['POST']) # crea ruta o endpoint
+        new_user = Users(nombre, apellido, email, contrasena, isAdmin)
+        db.session.add(new_user)
+        db.session.commit()
+
+        return jsonify({"message": "Registration successful"}), 200
+
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify({"message": "Internal Server Error"}), 500
+
+@app.route('/login', methods=['POST'])  # crea ruta o endpoint
 def login():
     print(request.json)
     email = request.json['email']
@@ -103,15 +111,48 @@ def login():
         global isLogged
         isLogged = True
         print(isLogged)
-        if user.isAdmin:
-            global isAdmin
-            isAdmin = True
-            print(isAdmin)
-        return redirect('https://huellitas-tpo.netlify.app/index.html')
+        #if user.isAdmin:
+        #    global isAdmin
+        #    isAdmin = True
+        #    print(isAdmin)
+        #return user_schema.jsonify(user)
+        global isAdmin
+        isAdmin = user.isAdmin  # Get the isAdmin status from the user object
+        print(isAdmin)
+
+        return jsonify({
+            'success': True,
+            'user': {
+                'id': user.id,
+                'nombre': user.nombre,
+                'apellido': user.apellido,
+                'email': user.email,
+                'isAdmin': isAdmin
+            }
+        }), 200
     else:
         return jsonify({"message": "Invalid credentials"}), 401
 
-    # return redirect('')
+@app.route('/login/status',methods=['GET'])
+def get_status():
+    global isLogged
+    global isAdmin
+    return jsonify({
+        'isLogged': isLogged,
+        'isAdmin': isAdmin
+        }), 200
+
+@app.route('/logout',methods=['GET'])
+def logout():
+    global isLogged
+    isLogged = False
+    global isAdmin
+    isAdmin = False
+    return jsonify({
+        'isLogged': isLogged,
+        'isAdmin': isAdmin
+        }), 200
+
 
 @app.route('/adopciones',methods=['GET'])
 def get_animales():
@@ -131,7 +172,7 @@ def get_animal(id):
 
 @app.route('/adopciones/<id>',methods=['DELETE'])
 def delete_animal(id):
-    animal=animal.query.get(id)
+    animal=Animales.query.get(id)
     db.session.delete(animal)
     db.session.commit()                     # confirma el delete
     return animal_schema.jsonify(animal) # me devuelve un json con el registro eliminado
@@ -155,7 +196,7 @@ def create_animal():
 @app.route('/adopciones/<id>' ,methods=['PUT'])
 def update_animal(id):
     animal=Animales.query.get(id)
- 
+
     animal.nombre=request.json['nombre']
     animal.raza=request.json['raza']
     animal.sexo=request.json['sexo']
@@ -166,9 +207,11 @@ def update_animal(id):
 
 
     db.session.commit()    # confirma el cambio
-    return animal_schema.jsonify(animal)    # y retorna un json con el producto
- 
+    return animal_schema.jsonify(animal)    # y retorna un json con el animal
 
+@app.route('/')
+def hello_world():
+    return 'Hello from Flask!'
 
 # programa principal *******************************
 if __name__=='__main__':  

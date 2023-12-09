@@ -23,45 +23,44 @@
           <a class="navbar-link" href="proteccionistas.html">Proteccionistas</a>
           <a class="navbar-link" href="donaciones.html">Donaciones</a>
           <button v-if="!isLogged" class="navbar-button"><a href="login.html">Login</a></button>
-          <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)">Logout</button>
+          <button v-if="isLogged" class="navbar-button" v-on:click="logout(urlLogout)"><a>Logout</a></button>
         </div>
       </nav>
     </header>
-      <main>
-        <section class="hero">
-          <h1 class="hero-title">Adoptá y salvá vidas</h1>
-          <h3 class="hero-subtitle">Encontrá a ese compañero que buscas</h3>
-          <p class="hero-text">Se formó con el fin de poder rescatar, rehabilitar y luego dar en adopción aquellos perros, gatos abandonados o maltratados. 
-              Para eso, unimos en una sola página a nuestros amigos proteccionistas, asi podés escontrar el lugar mas cercano a tu domicilio para adoptar o denunciar a un animal 
-              abandonado o maltratado.
+    <main>
+      <section class="hero">
+        <h1 class="hero-title">Adoptá y salvá vidas</h1>
+        <h3 class="hero-subtitle">Encontrá a ese compañero que buscas</h3>
+        <p class="hero-text">Se formó con el fin de poder rescatar, rehabilitar y luego dar en adopción aquellos perros, gatos abandonados o maltratados. 
+            Para eso, unimos en una sola página a nuestros amigos proteccionistas, asi podés escontrar el lugar mas cercano a tu domicilio para adoptar o denunciar a un animal 
+            abandonado o maltratado.
+        </p>
+        <div class="hero-images">
+          <img class="img-1" src="./images/hero-1.jpg" alt="">
+          <img class="img-2" src="./images/hero-2.jpg" alt="">
+          <img class="img-3" src="./images/hero-3.jpg" alt="">
+        </div>
+        <div class="hero-links">
+          <p class="hero-text">
+            Para acceder a todas las funcionalidades, registrate o ingresa a tu cuenta.
           </p>
-          <div class="hero-images">
-            <img src="./images/hero-1.jpg" alt="">
-            <img src="./images/hero-2.jpg" alt="">
-            <img src="./images/hero-3.jpg" alt="">
-          </div>
-          </section>
-          <section class="about">
-            <h3 class="about-title">¿Quienes somos?</h3>
-            <p class="about-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam accusantium magni sit temporibus, architecto cum ab obcaecati tenetur, autem vitae voluptatibus quam necessitatibus. Quos itaque atque temporibus nostrum repellendus?
-              Distinctio, vitae? Explicabo a praesentium ad, voluptates totam fuga laborum odio minima debitis officia nisi aspernatur nostrum nesciunt cupiditate quisquam aliquam nihil exercitationem, atque, fugit dignissimos vero rem nobis eaque!
-              Earum eaque consectetur totam id deleniti asperiores assumenda libero magni. Doloremque cumque, ad aliquam fugit hic eaque dolores. Nemo quo temporibus facere iure sequi quidem ut nulla corrupti doloribus ex.
-              Veritatis laboriosam temporibus vero neque mollitia molestias suscipit eligendi. Quaerat assumenda facilis tempore obcaecati nostrum cum! Provident harum odit facere accusamus commodi repellat ipsam praesentium! Ipsum sed facilis sunt eaque!
-              Beatae maiores rem ab quia tenetur nisi, enim veritatis odit veniam dolor quisquam excepturi consectetur impedit inventore deleniti doloribus! Labore ad sequi nostrum corporis recusandae voluptatibus quisquam esse error modi!
-              Architecto assumenda corrupti accusantium voluptatem autem minima odio dolores nemo qui, est officia et enim tenetur. Consectetur impedit nesciunt cupiditate eaque architecto labore, beatae magni earum unde in omnis cumque!
-              Harum animi doloribus enim dolor illo quaerat ipsum quos reiciendis eum quisquam. Expedita magnam laudantium excepturi saepe voluptas? Sapiente exercitationem dolorem quos doloribus dolore eveniet, perspiciatis quasi aspernatur dignissimos. Ea.
-              Ea facere suscipit corporis consequuntur quia, doloribus labore quidem aut quod beatae odit debitis repellat ut exercitationem, deserunt a dolore cupiditate qui enim voluptatum dolorem? Esse eum ab asperiores! At!
-              Nesciunt vitae esse autem officiis debitis numquam dolore ex qui velit ipsum mollitia molestiae, ratione quos. Deserunt eligendi exercitationem, tempora fuga ex, repudiandae numquam nisi voluptas voluptates nemo quidem doloremque.
-              Facere doloremque illum sit veniam fuga incidunt earum quas vitae fugit tempore esse minima nihil quibusdam cum nesciunt, assumenda temporibus, sequi ab quam accusantium autem quaerat sunt alias? Eligendi, sed.
-              Doloremque laudantium sit ullam corporis facilis fugit ab natus aliquid, voluptatem eos adipisci commodi quae pariatur earum cum hic tenetur! Beatae similique voluptas laborum, cum voluptatum ducimus animi hic libero.
-              Libero doloribus neque vitae molestias eaque, dignissimos deleniti porro at, tenetur officiis fugiat. Amet at minus aliquam dolorum iste tenetur, libero nemo adipisci soluta et nihil nostrum, molestias quaerat ipsum.
-              Quos suscipit repudiandae esse illo sunt animi earum quia, fugit tenetur minus, amet tempora sequi temporibus? Voluptatum dolor vero earum mollitia quo debitis sed nobis quibusdam, excepturi voluptates similique laborum.
-              Hic quod voluptate sunt eos voluptates vel laboriosam, quam perferendis ullam atque odio at eligendi error alias porro accusantium optio ipsum. Ex cumque distinctio enim perspiciatis sunt consequuntur excepturi! Doloremque?
-              Illum in quasi obcaecati incidunt natus ea iure repellat. Voluptatem excepturi deleniti veritatis eaque saepe error iure.
-            </p>
-          </section>
-      </main>
+          <a class="hero-links-button" href="register.html">Registrarse</a>
+          <a class="hero-links-button" href="login.html">Ingresar</a>
+        </div>
+        </section>
+        <section class="reviews">
+          <h3 class="reviews-title">Reseñas</h3>
+            <div class="reviews-container" id="api">
+              <div class="reviews-cards-container">
+                <div class="reviews-card col-2 col-s-12" v-for="i in datos">
+                  <img class="reviews-card-img" :src="i.picture.large" :alt="i.name.first + i.name.last">
+                  <p>Encontró su mascota en huellitas y nos recomienda. </p>
+                </div>
+              </div>
+            </div>
+        </section>
+    </main>
+
       <footer class="footer" id="footer">
         <foot></foot>
       </footer>
@@ -70,6 +69,7 @@
       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
       <script src="/js/header.js"></script>
       <script src="/js/footer.js"></script>
+      <script src="/js/api.js"></script>
       <script type="module" src="/js/login.js"></script>
     </body>
 </html>
